@@ -12,8 +12,38 @@ function Book(title, author) {
 const addBook = () => {
   const newBook = new Book(title.value, author.value);
   booksArray.push(newBook);
+  console.log(booksArray);
+  renderBook();
 };
 
 function myFunction() {
   return false;
+}
+
+function renderBook() {
+  const bookContainer = document.getElementById('booksContainer');
+  bookContainer.innerHTML = '';
+  for (let i = 0; i < booksArray.length; i += 1) {
+    const card = document.createElement('div');
+
+    const cardBody = document.createElement('div');
+
+    const title = document.createElement('h3');
+    title.innerText = booksArray[i].title;
+
+    const author = document.createElement('p');
+    author.innerText = booksArray[i].author;
+
+    cardBody.appendChild(title);
+    cardBody.appendChild(author);
+
+    card.appendChild(cardBody);
+
+    const deleteCard = document.createElement('button');
+    deleteCard.innerText = 'Delete';
+
+    cardBody.appendChild(deleteCard);
+
+    bookContainer.appendChild(card);
+  }
 }
