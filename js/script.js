@@ -9,13 +9,6 @@ function Book(title, author) {
   this.author = author;
 }
 
-const addBook = () => {
-  const newBook = new Book(title.value, author.value);
-  booksArray.push(newBook);
-  console.log(booksArray);
-  renderBook();
-};
-
 function myFunction() {
   return false;
 }
@@ -47,3 +40,9 @@ function renderBook() {
     bookContainer.appendChild(card);
   }
 }
+
+const addBook = () => {
+  const newBook = new Book(title.value, author.value);
+  booksArray.push(newBook);
+  renderBook();
+};
