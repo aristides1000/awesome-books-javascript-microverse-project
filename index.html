@@ -10,11 +10,11 @@
 <body>
   <h1>Awesome Books</h1>
   <div class="booksContainer"></div>
-  <form>
+  <form onsubmit="return myFunction();" id="myForm">
     <input type="text" placeholder="Title" required id="title">
     <input type="text" placeholder="Author" required id="author">
     <input type="submit" value="Add" onclick="addBook()">
   </form>
-  <script src="./script.js"></script>
+  <script src="./js/script.js"></script>
 </body>
 </html>
