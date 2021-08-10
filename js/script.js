@@ -1,5 +1,9 @@
 /* eslint-disable no-unused-vars */
-const booksArray = [];
+let booksArray = [];
+if (localStorage.myBooks != null){
+  booksArray = JSON.parse(localStorage.myBooks);
+}
+
 const title = document.getElementById('title');
 const author = document.getElementById('author');
 // const  form
@@ -44,5 +48,13 @@ function renderBook() {
 const addBook = () => {
   const newBook = new Book(title.value, author.value);
   booksArray.push(newBook);
+  updateStorage();
   renderBook();
+  title.value= ''
+  author.value = ''
+  console.log(booksArray)
 };
+
+const updateStorage = () => {
+  localStorage.myBooks = JSON.stringify(booksArray);
+}
