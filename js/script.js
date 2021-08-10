@@ -21,16 +21,17 @@ function myFunction() {
 function renderBook() {
   const bookContainer = document.getElementById('booksContainer');
   bookContainer.innerHTML = '';
-  for (let i = 0; i < booksArray.length; i += 1) {
+  const allBooks = JSON.parse(localStorage.myBooks);
+  for (let i = 0; i < allBooks.length; i += 1) {
     const card = document.createElement('div');
 
     const cardBody = document.createElement('div');
 
     const title = document.createElement('h3');
-    title.innerText = booksArray[i].title;
+    title.innerText = allBooks[i].title;
 
     const author = document.createElement('p');
-    author.innerText = booksArray[i].author;
+    author.innerText = allBooks[i].author;
 
     cardBody.appendChild(title);
     cardBody.appendChild(author);
@@ -41,7 +42,7 @@ function renderBook() {
     deleteCard.innerText = 'Delete';
     deleteCard.addEventListener('click', (e) => {
       e.preventDefault();
-      deleteBook(booksArray[i].title);
+      deleteBook(allBooks[i].title, allBooks[i].author);
     });
 
     cardBody.appendChild(deleteCard);
@@ -62,12 +63,14 @@ const addBook = () => {
   author.value = '';
 };
 
-const deleteBook = (name) => {
+const deleteBook = (title, name) => {
   for (let i = 0; i < booksArray.length; i += 1) {
-    if (booksArray[i].title === name) {
+    if (booksArray[i].title === title && booksArray[i].author === name) {
       booksArray.splice(i, 1);
     }
   }
   updateStorage();
   renderBook();
 };
+
+renderBook();
