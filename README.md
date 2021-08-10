@@ -1,14 +1,12 @@
 # Awesome books
 
-> This is a simple javascript project where a user can add a book dynamically into a an array of books
+> This is a simple javascript project where a user can add a book dynamically into a an array of books.
 ## Built With
 
 - HTML
 - CSS
 - JavaScript
 - ESLint
-
-
 ## Live Demo
 
 [Live Demo Link](https://raw.githack.com/aristides1000/awesome-books-javascript-microverse-project/feature/index.html)

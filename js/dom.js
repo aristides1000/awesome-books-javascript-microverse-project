@@ -4,33 +4,37 @@
 function renderBook() {
   const bookContainer = document.getElementById('booksContainer');
   bookContainer.innerHTML = '';
-  const allBooks = JSON.parse(localStorage.myBooks);
-  for (let i = 0; i < allBooks.length; i += 1) {
-    const card = document.createElement('div');
+  let allBooks;
+  if (localStorage.myBooks != null) {
+    allBooks = JSON.parse(localStorage.myBooks);
 
-    const cardBody = document.createElement('div');
+    for (let i = 0; i < allBooks.length; i += 1) {
+      const card = document.createElement('div');
 
-    const title = document.createElement('h3');
-    title.innerText = allBooks[i].title;
+      const cardBody = document.createElement('div');
 
-    const author = document.createElement('p');
-    author.innerText = allBooks[i].author;
+      const title = document.createElement('h3');
+      title.innerText = allBooks[i].title;
 
-    cardBody.appendChild(title);
-    cardBody.appendChild(author);
+      const author = document.createElement('p');
+      author.innerText = allBooks[i].author;
 
-    card.appendChild(cardBody);
+      cardBody.appendChild(title);
+      cardBody.appendChild(author);
 
-    const deleteCard = document.createElement('button');
-    deleteCard.innerText = 'Delete';
-    deleteCard.addEventListener('click', (e) => {
-      e.preventDefault();
-      deleteBook(allBooks[i].title, allBooks[i].author);
-    });
+      card.appendChild(cardBody);
 
-    cardBody.appendChild(deleteCard);
+      const deleteCard = document.createElement('button');
+      deleteCard.innerText = 'Delete';
+      deleteCard.addEventListener('click', (e) => {
+        e.preventDefault();
+        deleteBook(allBooks[i].title, allBooks[i].author);
+      });
 
-    bookContainer.appendChild(card);
+      cardBody.appendChild(deleteCard);
+
+      bookContainer.appendChild(card);
+    }
   }
 }
 
