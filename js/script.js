@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 let booksArray = [];
-if (localStorage.myBooks != null){
+if (localStorage.myBooks != null) {
   booksArray = JSON.parse(localStorage.myBooks);
 }
 
@@ -44,17 +44,15 @@ function renderBook() {
     bookContainer.appendChild(card);
   }
 }
+const updateStorage = () => {
+  localStorage.myBooks = JSON.stringify(booksArray);
+};
 
 const addBook = () => {
   const newBook = new Book(title.value, author.value);
   booksArray.push(newBook);
   updateStorage();
   renderBook();
-  title.value= ''
-  author.value = ''
-  console.log(booksArray)
+  title.value = '';
+  author.value = '';
 };
-
-const updateStorage = () => {
-  localStorage.myBooks = JSON.stringify(booksArray);
-}
