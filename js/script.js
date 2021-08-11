@@ -17,6 +17,16 @@ class Book {
   }
 }
 
+class BookList {
+  constructor(array) {
+    this.array = array;
+  }
+
+  updateStorage = () => {
+    localStorage.myBooks = JSON.stringify(this.array);
+  };
+}
+
 function myFunction() {
   return false;
 }
