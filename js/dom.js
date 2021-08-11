@@ -13,29 +13,34 @@ function renderBook() {
   bookContainer.innerHTML = '';
 
   for (let i = 0; i < allBooks.length; i += 1) {
-    const card = document.createElement('div');
+    const card = document.createElement('tbody');
 
-    const cardBody = document.createElement('div');
+    const cardBody = document.createElement('tr');
 
-    const title = document.createElement('h3');
-    title.innerText = allBooks[i].title;
+    const title = document.createElement('td');
+    // title.classList.add('bg-info')
+    title.innerText = allBooks[i].title + "by " + allBooks[i].author;
 
-    const author = document.createElement('p');
-    author.innerText = allBooks[i].author;
+    // const author = document.createElement('p');
+    // author.innerText = allBooks[i].author;
 
     cardBody.appendChild(title);
-    cardBody.appendChild(author);
+    // cardBody.appendChild(author);
 
-    card.appendChild(cardBody);
-
+    const deletebtn = document.createElement('td')
     const deleteCard = document.createElement('button');
+    deletebtn.classList.add('bg-info')
     deleteCard.innerText = 'Delete';
+    deleteCard.classList.add('mx-auto')
     deleteCard.addEventListener('click', (e) => {
       e.preventDefault();
       bookList.deleteBook(allBooks[i].title, allBooks[i].author);
     });
+    deletebtn.appendChild(deleteCard)
+    cardBody.appendChild(deletebtn);
 
-    cardBody.appendChild(deleteCard);
+    card.appendChild(cardBody);
+
 
     bookContainer.appendChild(card);
   }
