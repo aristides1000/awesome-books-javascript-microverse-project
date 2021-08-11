@@ -2,21 +2,11 @@
 /* eslint-disable no-loop-func */
 
 function renderBook() {
-  console.log('hello')
   const bookContainer = document.getElementById('booksContainer');
   bookContainer.innerHTML = '';
-  // let allBooks;
-
-  // if (localStorage.myBooks != null) {
-    const allBooks = JSON.parse(localStorage.myBooks);
-    const bookList = new BookList(allBooks);
-    const submit = document.querySelector('.submit')
-    console.log(submit)
-    submit.addEventListener('click', (e) => {
-      
-      e.preventDefault();
-      bookList.addBook();
-    });
+  let allBooks;
+  if (localStorage.myBooks != null) {
+    allBooks = JSON.parse(localStorage.myBooks);
 
     for (let i = 0; i < allBooks.length; i += 1) {
       const card = document.createElement('div');
@@ -46,6 +36,6 @@ function renderBook() {
       bookContainer.appendChild(card);
     }
   }
-// }
+}
 
 renderBook();

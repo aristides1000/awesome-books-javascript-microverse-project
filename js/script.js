@@ -2,6 +2,11 @@
 /* eslint-disable no-use-before-define */
 /* eslint-disable no-undef */
 
+let booksArray = [];
+if (localStorage.myBooks != null) {
+  booksArray = JSON.parse(localStorage.myBooks);
+}
+
 const title = document.getElementById('title');
 const author = document.getElementById('author');
 
@@ -24,7 +29,6 @@ class BookList {
    addBook = () => {
      const newBook = new Book(title.value, author.value);
      this.array.push(newBook);
-     console.log(this.array)
      this.updateStorage();
      renderBook();
      title.value = '';
