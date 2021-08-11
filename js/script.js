@@ -10,13 +10,6 @@ if (localStorage.myBooks != null) {
 const title = document.getElementById('title');
 const author = document.getElementById('author');
 
-class Book {
-  constructor(title, author) {
-    this.title = title;
-    this.author = author;
-  }
-}
-
 class BookList {
   constructor(array) {
     this.array = array;
