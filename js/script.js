@@ -27,31 +27,25 @@ class BookList {
   };
 
    addBook = () => {
-    const newBook = new Book(title.value, author.value);
-    this.array.push(newBook);
+     const newBook = new Book(title.value, author.value);
+     this.array.push(newBook);
+     this.updateStorage();
+     renderBook();
+     title.value = '';
+     author.value = '';
+   };
+
+  deleteBook = (title, name) => {
+    for (let i = 0; i < this.array.length; i += 1) {
+      if (this.array[i].title === title && this.array[i].author === name) {
+        this.array.splice(i, 1);
+      }
+    }
     this.updateStorage();
     renderBook();
-    title.value = '';
-    author.value = '';
   };
-  
 }
 
 function myFunction() {
   return false;
 }
-
-const updateStorage = () => {
-  localStorage.myBooks = JSON.stringify(booksArray);
-};
-
-
-const deleteBook = (title, name) => {
-  for (let i = 0; i < booksArray.length; i += 1) {
-    if (booksArray[i].title === title && booksArray[i].author === name) {
-      booksArray.splice(i, 1);
-    }
-  }
-  updateStorage();
-  renderBook();
-};
