@@ -25,6 +25,16 @@ class BookList {
   updateStorage = () => {
     localStorage.myBooks = JSON.stringify(this.array);
   };
+
+   addBook = () => {
+    const newBook = new Book(title.value, author.value);
+    this.array.push(newBook);
+    this.updateStorage();
+    renderBook();
+    title.value = '';
+    author.value = '';
+  };
+  
 }
 
 function myFunction() {
@@ -35,14 +45,6 @@ const updateStorage = () => {
   localStorage.myBooks = JSON.stringify(booksArray);
 };
 
-const addBook = () => {
-  const newBook = new Book(title.value, author.value);
-  booksArray.push(newBook);
-  updateStorage();
-  renderBook();
-  title.value = '';
-  author.value = '';
-};
 
 const deleteBook = (title, name) => {
   for (let i = 0; i < booksArray.length; i += 1) {
