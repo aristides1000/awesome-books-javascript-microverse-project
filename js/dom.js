@@ -28,8 +28,9 @@ function renderBook() {
     // cardBody.appendChild(author);
 
     const deletebtn = document.createElement('td')
+    deletebtn.classList.add('any');
     const deleteCard = document.createElement('button');
-    deletebtn.classList.add('bg-info')
+    deleteCard.classList.add('btn', 'btn-warning')
     deleteCard.innerText = 'Delete';
     deleteCard.classList.add('mx-auto')
     deleteCard.addEventListener('click', (e) => {
