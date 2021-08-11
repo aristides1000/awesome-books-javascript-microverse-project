@@ -13,22 +13,22 @@ function renderBook() {
   bookContainer.innerHTML = '';
 
   for (let i = 0; i < allBooks.length; i += 1) {
-    const card = document.createElement('tbody');
+
 
     const cardBody = document.createElement('tr');
 
     const title = document.createElement('td');
-    // title.classList.add('bg-info')
-    title.innerText = allBooks[i].title + "by " + allBooks[i].author;
-
-    // const author = document.createElement('p');
-    // author.innerText = allBooks[i].author;
+    title.classList.add('ms-4')
+    const spanelm = document.createElement('span')
+    spanelm.classList.add('ms-3')
+    spanelm.innerText = allBooks[i].title + "by " + allBooks[i].author;
+    title.appendChild(spanelm)
 
     cardBody.appendChild(title);
-    // cardBody.appendChild(author);
+  
 
     const deletebtn = document.createElement('td')
-    deletebtn.classList.add('any');
+    deletebtn.classList.add('d-flex');
     const deleteCard = document.createElement('button');
     deleteCard.classList.add('btn', 'btn-warning')
     deleteCard.innerText = 'Delete';
@@ -40,10 +40,7 @@ function renderBook() {
     deletebtn.appendChild(deleteCard)
     cardBody.appendChild(deletebtn);
 
-    card.appendChild(cardBody);
-
-
-    bookContainer.appendChild(card);
+    bookContainer.appendChild(cardBody);
   }
 }
 
