@@ -49,6 +49,12 @@ const newBook = document.getElementById('newbook');
 const myForm = document.getElementById('myForm');
 const myBookList = document.getElementById('bookList');
 const myList = document.getElementById('list');
+const myHome = document.getElementById('home');
+const myContact = document.getElementById('myContact');
+const contactNavLink = document.getElementById('contactNavLink');
+
+const myNewbookLi = document.getElementById('newbookLi');
+const myContactNavLinkLi = document.getElementById('contactNavLinkLi');
 
 newBook.addEventListener('click', (e) => {
   e.preventDefault();
@@ -56,6 +62,8 @@ newBook.addEventListener('click', (e) => {
   newBook.classList.add('active');
   myList.classList.remove('active');
   myBookList.classList.add('d-none');
+  contactNavLink.classList.remove('active');
+  myContact.classList.add('d-none');
 });
 
 myList.addEventListener('click', (e) => {
@@ -64,5 +72,42 @@ myList.addEventListener('click', (e) => {
   myForm.classList.add('d-none');
   myBookList.classList.remove('d-none');
   newBook.classList.remove('active');
+  contactNavLink.classList.remove('active');
+  myContact.classList.add('d-none');
 });
+
+myHome.addEventListener('click', (e) => {
+  e.preventDefault();
+  myList.classList.add('active');
+  myForm.classList.add('d-none');
+  myBookList.classList.remove('d-none');
+  newBook.classList.remove('active');
+  contactNavLink.classList.remove('active');
+  myContact.classList.add('d-none');
+});
+
+contactNavLink.addEventListener('click', (e) => {
+  e.preventDefault();
+  contactNavLink.classList.add('active');
+  myForm.classList.add('d-none');
+  myList.classList.remove('active');
+  myBookList.classList.add('d-none');
+  newBook.classList.remove('active');
+  myContact.classList.remove('d-none');
+});
+
+function myFunction(x) {
+  if (x.matches) { // If media query matches
+    myNewbookLi.classList.remove('border-3', 'border-start');
+    myContactNavLinkLi.classList.remove('border-3', 'border-start');
+  } else {
+    myNewbookLi.classList.add('border-3', 'border-start');
+    myContactNavLinkLi.classList.add('border-3', 'border-start');
+  }
+}
+
+const x = window.matchMedia('(max-width: 992px)');
+myFunction(x); // Call listener function at run time
+x.addListener(myFunction); // Attach listener function on state changes
+
 renderBook();
