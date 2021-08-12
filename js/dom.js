@@ -45,4 +45,24 @@ submit.addEventListener('click', (e) => {
   e.preventDefault();
   bookList.addBook();
 });
+const newBook = document.getElementById('newbook');
+const myForm = document.getElementById('myForm');
+const myBookList = document.getElementById('bookList');
+const myList = document.getElementById('list');
+
+newBook.addEventListener('click', (e) => {
+  e.preventDefault();
+  myForm.classList.remove('d-none');
+  newBook.classList.add('active');
+  myList.classList.remove('active');
+  myBookList.classList.add('d-none');
+});
+
+myList.addEventListener('click', (e) => {
+  e.preventDefault();
+  myList.classList.add('active');
+  myForm.classList.add('d-none');
+  myBookList.classList.remove('d-none');
+  newBook.classList.remove('active');
+});
 renderBook();
