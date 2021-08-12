@@ -56,6 +56,10 @@ const contactNavLink = document.getElementById('contactNavLink');
 const myNewbookLi = document.getElementById('newbookLi');
 const myContactNavLinkLi = document.getElementById('contactNavLinkLi');
 
+const time = document.getElementById('dateTime');
+const { DateTime } = luxon;
+const dt = DateTime.now();
+time.innerHTML = dt.toLocaleString(DateTime.DATETIME_MED);
 newBook.addEventListener('click', (e) => {
   e.preventDefault();
   myForm.classList.remove('d-none');
@@ -97,7 +101,7 @@ contactNavLink.addEventListener('click', (e) => {
 });
 
 function myFunction(x) {
-  if (x.matches) { // If media query matches
+  if (x.matches) {
     myNewbookLi.classList.remove('border-3', 'border-start');
     myContactNavLinkLi.classList.remove('border-3', 'border-start');
   } else {
@@ -107,7 +111,7 @@ function myFunction(x) {
 }
 
 const x = window.matchMedia('(max-width: 992px)');
-myFunction(x); // Call listener function at run time
-x.addListener(myFunction); // Attach listener function on state changes
+myFunction(x);
+x.addListener(myFunction);
 
 renderBook();

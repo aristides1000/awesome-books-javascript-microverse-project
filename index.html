@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <title>Awesome Books</title>
 </head>
+
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" id="home" href="#">Awesome Books</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -32,9 +36,9 @@
       </div>
     </nav>
   </header>
-
   <main class="container-fluid">
-    <section class="row" id="dateTime">
+    <section class="row">
+      <div class="col-12 d-flex justify-content-end mt-4 fs-6" id="dateTime"></div>
     </section>
     <section class="row" id="bookList">
       <div class="col-12 d-flex justify-content-center">
@@ -55,7 +59,7 @@
           <input type="text" placeholder="Title" required id="title" class="form-control fs-5"><br>
           <input type="text" placeholder="Author" required id="author" class="form-control fs-5"><br>
           <div class="d-flex justify-content-end">
-          <input type="submit" value="Add" id="submit" class="submit btn btn-success btn-lg">
+            <input type="submit" value="Add" id="submit" class="submit btn btn-success btn-lg">
           </div>
         </form>
       </div>
@@ -84,9 +88,13 @@
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top fixed-bottom">
     <p class="col-md-4 mb-0 ms-4 text-muted">© Copyright</p>
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+  <script src="./js/luxon.js"></script>
   <script src="./js/book.js"></script>
   <script src="./js/script.js"></script>
   <script src="./js/dom.js"></script>
 </body>
+
 </html>
