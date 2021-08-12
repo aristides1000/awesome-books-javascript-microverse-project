@@ -9,7 +9,7 @@
 - ESLint
 ## Live Demo
 
-[Live Demo Link](https://raw.githack.com/aristides1000/awesome-books-javascript-microverse-project/feature/index.html)
+[Live Demo Link](https://raw.githack.com/aristides1000/awesome-books-javascript-microverse-project/nav_bar/index.html)
 
 
 ## Getting Started
